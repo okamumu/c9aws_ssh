@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    c9ssh:
+        build: .
+        restart: always
+        ports:
+            - "50111:22"
+        hostname: c9clarinet
+        volumes:
+            - "okamuc9:/home/okamu"
+        environment:
+            - C9USER=okamu
+            - C9PASSWORD=no
+            - C9UID=2000
+            - C9GID=10000
+            - C9HOME=/home/okamu
+            - C9GRANT_SUDO=nopass
+            - C9RSA=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCtJ95SJbejVdYOtEQpu7V3Oul2CZOOO75Pv9xek3mnYFIcJyRS+G0/DL16TD1xWWJIHi8DwViaSqbBl0I8fgPWvhL+DwKD/PSvJknvPOS9lewTeL+rvqvI9+XkDQaibHElV9nzAUvTsIS/k4v8GvS+9tOELIrJBm3H8OvTaU1oPQShL640FW8DM0Spg7Y5F1acnjIZj+k2BKHDhpvihxJrMWfKyLJqIWVYmR/JuPEYkZKoQjQByM7pj1Z8uX6caJ2zjG54QJeIyJc7pkSC0NGb/Cx4HlDeV/NhankWh+l7Q5wkqW68iMFomfoiYwKQhJ8P4Zxr5yKvOhAmUqJX1d3gZCXFEyq7C8U6ywi+7nmtLj4ihdf82AMqaoR4QRG7ItNjCpL15AHnQPcpBVjCQcIZMQ+jNZVfKd+jDtnAQju4/y7QlQMKKrIfgrVmKVyijIjeDFHBFWnZtubdeAD7EXEGSyDHyBkgFt0FREnD4NAwVqPO/iSUF+7vk7DVGUuNeTtxOQfH+0cW/mDQZf/CzmgdZ0JZp5u/2H5fFYqPbzhIEg6IwG8NYVB1fR1isgqLhzSo/+yMNulqplIXkrjttDHxbf5DbksoTdm7joRONYfYqwws3dfGmww4FycvopAHAQI/Q6cn0qCrfXoWt701pMUCBfVjtzXzn18QQYtf7vgpDw== root+192333618745@cloud9.amazon.com
+
+volumes:
+  okamuc9:
+
