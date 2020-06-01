@@ -31,6 +31,9 @@ RUN ln -sf /usr/bin/node /usr/local/bin/node
 
 RUN mkdir /var/run/sshd
 
+COPY c9-install.sh /c9-install.sh
+RUN HOME=/etc/skel /c9-install.sh
+
 COPY useradd.sh /root/useradd.sh
 COPY entrypoint.sh /root/entrypoint.sh
 
