@@ -16,18 +16,15 @@ RUN apt-get update &&\
     nodejs \
     npm \
     sqlite3 \
+    libsqlite3-dev \
     whois &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/*
-
-RUN npm update && npm install -g sqlite3
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-
-RUN ln -sf /usr/bin/node /usr/local/bin/node
 
 RUN mkdir /var/run/sshd
 
